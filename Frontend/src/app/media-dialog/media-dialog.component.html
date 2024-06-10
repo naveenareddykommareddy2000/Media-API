@@ -1,0 +1,34 @@
+<!-- <h1 mat-dialog-title>Media Content</h1>
+<div mat-dialog-content>
+  <h3>Images</h3>
+  <div *ngFor="let image of data.images">
+    <img [src]="image" alt="Image" width="200">
+  </div>
+  <h3>Videos</h3>
+  <div *ngFor="let video of data.videos">
+    <video [src]="video" controls width="200"></video>
+  </div>
+  <h3>News</h3>
+  <div *ngFor="let news of data.news">
+    <h4>{{news.title}}</h4>
+    <p>{{news.content}}</p>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div> -->
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <div *ngIf="data.imageUrl">
+    <img [src]="data.imageUrl" alt="image" style="max-width: 50%; height: auto;">
+  </div>
+  <div *ngIf="data.videoUrl">
+    <video controls [src]="data.videoUrl" style="max-width: 50%; height: auto;"></video>
+  </div>
+  <h3>Content:</h3>
+  <p>{{ data.content }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
+

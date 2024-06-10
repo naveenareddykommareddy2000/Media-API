@@ -1,0 +1,81 @@
+.blue-heading {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', 'sans-serif';
+    color: blue;
+    cursor: pointer; 
+    text-decoration: underline;
+  }
+  
+  /* .newspaper-content {
+    font-family: "Times", serif;
+    font-size: 16px; 
+    line-height: 1.6;
+  } */
+  .newspaper-content {
+    column-count: 2;  
+    font-size: 18px; 
+    column-gap: 20px;
+    text-align: justify;
+  }
+  
+  .newspaper-content p {
+    margin-bottom: 10px;
+  }
+  
+  .newspaper-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .video {
+    max-width: 20%; 
+     max-height: 30%;
+    
+
+  }
+  img {
+    max-width: 40%; 
+    max-height: 20%;
+    height: auto;
+  }
+  .image{
+    max-width: 30%; 
+    max-height: 10%;
+  }
+  .paper-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .paper-name {
+    font-weight: bold;
+  }
+  
+  .published-by {
+    text-align: right;
+  }
+  
+
+
+
+/* Style for individual news items */
+.media-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* Style for images */
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for videos */
+.video {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-text {
+  text-align: justify;
+}
+

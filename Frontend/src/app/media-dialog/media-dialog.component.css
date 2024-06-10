@@ -1,0 +1,21 @@
+/* media-dialog.component.css */
+img, video {
+    display: block;
+    margin-bottom: 30px;
+    position: right;
+    
+  }
+  /* styles.css or media-dialog.component.css */
+  /* ::ng-deep .custom-dialog-container .mat-dialog-container {
+    position: fixed;
+    right: 40;
+    top: 0;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    width: 400px;
+  } */
+  
+  
