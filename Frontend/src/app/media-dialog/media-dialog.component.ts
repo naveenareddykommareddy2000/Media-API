@@ -7,6 +7,17 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./media-dialog.component.css']
 })
 export class MediaDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  currentIndex: number = 0;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    this.data = data || { videoUrls: [] };
+   }
+  next() {
 
+      this.currentIndex = this.currentIndex + 1;
+  }
+  previous() {
+    if (this.currentIndex > 0) {
+      this.currentIndex = this.currentIndex - 1;
+    }
+  }
 }

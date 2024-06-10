@@ -148,16 +148,16 @@
 
 
 
-<h1 style="text-align: center; margin: 0;"><img src="assets/blade.jpg" class="image"/></h1>
+<h1 style="text-align: center; margin: 0;"><img src="assets/blade.png" class="image"/></h1>
 <div class="newspaper-content">
   <div *ngFor="let item of media" class="media-item">
     <h2 class="blue-heading" (click)="onClickTitle(item)">{{ item.title }}</h2>
-    <div *ngIf="item.imageUrl">
-      <img [src]="item.imageUrl" alt="{{ item.title }}" class="image">
+    <div *ngIf="item.imageUrls">
+      <img [src]="item.imageUrls[0]" alt="{{ item.title }}" class="image">
     </div>
     <div *ngIf="item.videoUrl">
       <video controls class="video">
-        <source [src]="item.videoUrl" type="video/mp4">
+        <source [src]="item.videoUrls" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>

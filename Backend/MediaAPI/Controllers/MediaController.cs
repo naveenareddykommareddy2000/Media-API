@@ -22,8 +22,21 @@ namespace MediaAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Media>>> GetMedia()
         {
-            return await _mediaContext.Media.ToListAsync();
-        }
+            //return await _mediaContext.Media.ToListAsync();
 
+            var mediaItems = await _mediaContext.Media
+                .Include(m => m.MediaItems)
+                .ToListAsync();
+            var mediaDTOs = mediaItems.Select(m => new MediaDTO
+            {
+                Title = m.Title,
+                Content = m.Content,
+                ImageUrls = m.MediaItems.Where(mi => mi.ImageUrl != null).Select(mi => mi.ImageUrl).ToList(),
+                VideoUrls = m.MediaItems.Where(mi => mi.VideoUrl != null).Select(mi => mi.VideoUrl).ToList()
+            }).ToList();
+
+            return Ok(mediaDTOs);
+        }
     }
 }
+

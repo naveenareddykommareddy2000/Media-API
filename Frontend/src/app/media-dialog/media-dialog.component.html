@@ -17,7 +17,9 @@
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
 </div> -->
-<h1 mat-dialog-title>{{ data.title }}</h1>
+
+
+<!-- <h1 mat-dialog-title>{{ data.title }}</h1>
 <div mat-dialog-content>
   <div *ngIf="data.imageUrl">
     <img [src]="data.imageUrl" alt="image" style="max-width: 50%; height: auto;">
@@ -30,5 +32,23 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
-</div>
+</div> -->
 
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+    <div *ngIf="data.imageUrls && data.imageUrls.length > 0" class="image-carousel">
+        <div class="navigation left" (click)="previous()" [class.disabled]="currentIndex === 0">&lt;</div>
+        <img [src]="data.imageUrls[currentIndex]" alt="image" style="max-width: 50%; height: auto;">
+        <div class="navigation right" (click)="next()" [class.disabled]="currentIndex === data.imageUrls.length - 1">&gt;</div>
+    </div>
+    <div *ngIf="data.videoUrls && data.videoUrls.length > 0">
+        <div *ngFor="let videoUrl of data.videoUrls">
+            <video controls [src]="videoUrl" style="max-width: 50%; height: auto;"></video>
+        </div>
+    </div>
+    <h3>Content:</h3>
+    <p>{{ data.content }}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+</div>
